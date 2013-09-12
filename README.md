@@ -12,6 +12,6 @@
 2. …
 
 
-###协议
+###License
  
 1. see [here](http://www.linfo.org/bsdlicense.html);
