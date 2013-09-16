@@ -11,7 +11,6 @@ int debug = 1;
 
 
 #define SMTP_PORT         25
-#define SMTP_SERVER       "smtp.163.com"
 #define SMTP_MTU          800
 #define MAX_EMAIL_LEN     64
 #define TEXT_BOUNDARY     "KkK170891tpbkKk__FV_KKKkkkjjwq"
