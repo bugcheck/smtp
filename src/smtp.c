@@ -550,7 +550,7 @@ int main()
     printf("\r\nprepare email OK ...\r\n");
 
 	/* send to buddy */
-	fd = connectSmtp(smtpUrl, 25);
+	fd = connectSmtp(smtpUrl, SMTP_PORT);
 
 	printf("connect OK ...\r\n");
 	
