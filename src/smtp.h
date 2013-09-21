@@ -1,5 +1,5 @@
 /*
- * 2013-9-10:creat by ken <http://kenchowcn.com>
+ * 2013-9-10:build by ken <http://kenchowcn.com>
  *
  */
 
