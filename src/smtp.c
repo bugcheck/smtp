@@ -534,7 +534,7 @@ int main()
 	const unsigned char *mailBody = "I love you alice!!";
 
 	const unsigned char *fromMailAddr= "ken@163.com";
-	const unsigned char *mailPasswd= "centnet";
+	const unsigned char *mailPasswd= "ecila";
 	const unsigned char *toMailAddr= "alice@163.com";
 	const unsigned char *smtpUrl = "smtp.163.com";
 
