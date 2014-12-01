@@ -530,12 +530,12 @@ int main()
 	int fd = 0, ret;
 	unsigned char *mail = NULL;
 	const unsigned char *filePath = "./test.jpg";
-	const unsigned char *mailSubject = "test";
-	const unsigned char *mailBody = "hello smtp!!";
+	const unsigned char *mailSubject = "for my love.";
+	const unsigned char *mailBody = "I love you alice!!";
 
-	const unsigned char *fromMailAddr= "centnet_voip@163.com";
+	const unsigned char *fromMailAddr= "ken@163.com";
 	const unsigned char *mailPasswd= "centnet";
-	const unsigned char *toMailAddr= "centnet_voip@163.com";
+	const unsigned char *toMailAddr= "alice@163.com";
 	const unsigned char *smtpUrl = "smtp.163.com";
 
 	mail = calloc(1, 1);
