@@ -315,7 +315,7 @@ int sendEmail(const int socketFd, const unsigned char *fromMail, const unsigned 
 
 	/* Send: MAIL FROM */
 	memset(&writeData, 0, SMTP_MTU);
-	sprintf(writeData, "MAIL FROM: <%s>\r\n", fromMail);
+	sprintf(writeData, "MAIL FROM:<%s>\r\n", fromMail);
     safeWrite(socketFd, writeData, strlen(writeData));
 
 	/* Recv: MAIL FROM */
@@ -327,7 +327,7 @@ int sendEmail(const int socketFd, const unsigned char *fromMail, const unsigned 
 
 	/* Send: RCPT TO */
 	memset(&writeData, 0, SMTP_MTU);
-	sprintf(writeData, "RCPT TO: <%s>\r\n", toMail);
+	sprintf(writeData, "RCPT TO:<%s>\r\n", toMail);
     safeWrite(socketFd, writeData, strlen(writeData));
 
 	/* Recv: RCPT TO */
@@ -402,7 +402,7 @@ int mailText(unsigned char **mail, const unsigned char *fromMail, const unsigned
 	memset(&toName, 0, MAX_EMAIL_LEN);
 	stringCut(toMail, NULL, "@", toName);
 	
-	snprintf(mailText, mailTextLen, "From:\"%s\"<%s>\r\nTo:\"%s\"<%s>\r\nSubject: %s\r\nMIME-Version:1.0\r\nContent-Type:multipart/mixed;boundary=\"%s\"\r\n\r\n--%s\r\nContent-Type: text/plain; charset=\"gb2312\"\r\n\r\n%s\r\n\r\n--%s\r\n", fromName, fromMail, toName, toMail, mailSubject, TEXT_BOUNDARY, TEXT_BOUNDARY, mailBody, TEXT_BOUNDARY);
+	snprintf(mailText, mailTextLen, "From: \"%s\"<%s>\r\nTo: \"%s\"<%s>\r\nSubject: %s\r\nMIME-Version:1.0\r\nContent-Type:multipart/mixed;boundary=\"%s\"\r\n\r\n--%s\r\nContent-Type: text/plain; charset=\"gb2312\"\r\n\r\n%s\r\n\r\n--%s\r\n", fromName, fromMail, toName, toMail, mailSubject, TEXT_BOUNDARY, TEXT_BOUNDARY, mailBody, TEXT_BOUNDARY);
 
 	*mail = realloc(*mail, strlen(*mail)+strlen(mailText)+1);
 	if (NULL == *mail)
